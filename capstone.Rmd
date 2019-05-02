@@ -1,0 +1,52 @@
+---
+title: "Capstone: NOAA data"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+After downloading and reading in the dataset, the overall task for this module is to write a function named eq_clean_data()that takes raw NOAA data frame and returns a clean data frame. The clean data frame should have the following:
+
+
+```{r}
+library(tidyverse)
+df <- read_tsv("results.csv")
+
+eq_clean_data = function(df) {
+  df = dplyr::mutate(
+    df,
+    date = str_c(YEAR, MONTH, DAY, sep = "-") %>% lubridate::as_date(),
+    LATITUDE = as.numeric(LATITUDE),
+    LONGITUDE = as.numeric(LONGITUDE)
+    )
+  
+  return(df)
+}
+
+df = eq_clean_data(df)
+
+
+eq_location_clean = function(df){
+  df = mutate(df, LOCATION_NAME = LOCATION_NAME %>% str_replace(".*: *", "") %>% str_to_title())
+  
+  return(df)
+}
+
+df = df %>% eq_location_clean()
+
+
+```
+
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
