@@ -1,3 +1,6 @@
 .httr-oauth
 .Rproj.user
 .RData
+capstone.Rproj
+.Rhistory
+inst/doc
