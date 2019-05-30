@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Liddlle/capstone.svg?branch=master)](https://travis-ci.org/Liddlle/capstone)
+
 # capstone
 
 The goal of capstone is to provide functions for handling earthquake records from 
