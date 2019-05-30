@@ -38,10 +38,11 @@ Geom for plotting a time line of earthquakes ranging from xmin to xmaxdates
 with a point for each earthquake
 }
 \examples{
+\dontrun{
 df \%>\% filter(COUNTRY \%in\% c("RUSSIA", "ISRAEL")) \%>\%
   ggplot(aes(x = date, size = EQ_PRIMARY, y = COUNTRY, col= DEATHS)) +
       geom_timeline() +
       scale_size_continuous(name = 'Richter scale value') +
       scale_color_continuous(name = '# deaths')
-
+}
 }

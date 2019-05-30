@@ -24,8 +24,10 @@ earthquake is missing values for any of these, both the label and the value shou
 be skipped for that element of the tag.
 }
 \examples{
+\dontrun{
 df \%>\%
   dplyr::filter(COUNTRY == "RUSSIA" & lubridate::year(DATE) >= 2000) \%>\%
   dplyr::mutate(popup_text = eq_create_label(.)) \%>\%
   eq_map(annot_col = "popup_text")
+  }
 }

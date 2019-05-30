@@ -22,7 +22,9 @@ After downloading and reading in the dataset, the overall task clean the data. W
 ```{r}
 library(readr)
 library(dplyr)
-df = read_tsv("results.csv")
+library(capstone)
+load(system.file("extdata", "df.rda", package = "capstone"))
+
 head(df)
 ```
 
@@ -78,7 +80,7 @@ The eq_map() function maps the epicenters (LATITUDE/LONGITUDE) and annotates eac
 
 ```{r}
 df_clean %>%
-  dplyr::filter(COUNTRY == "MEXICO" & YEAR >= 2000) %>% drop_na(DATE) %>% 
+  dplyr::filter(COUNTRY == "MEXICO" & YEAR >= 2000) %>% 
   eq_map(annot_col = "DATE")
 
 ```

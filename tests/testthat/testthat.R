@@ -4,7 +4,7 @@ context("Test functions from capstone package")
 
 test_check("capstone")
 
-load(system.file("data/df.rda", package = "capstone"))
+load(system.file("extdata", "df.rda", package = "capstone"))
 
 # Testing eq_clean_data and eq_location_clean
 test_that("Cleaning data",{

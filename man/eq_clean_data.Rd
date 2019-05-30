@@ -19,6 +19,7 @@ date column obtained as a resulted of mergind YEAR, MONTH and DAY columns;
 LATITUDE and LONGITUDE columns converted to numeric class
 }
 \examples{
+\dontrun{
 df = eq_clean_data(df)
-
+}
 }

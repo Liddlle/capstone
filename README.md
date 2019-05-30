@@ -17,10 +17,11 @@ devtools::install_github("Liddlle/capstone")
 
 ## Example
 
-With this package you can build beautiful leaflet maps such as this:
+With this package you can build beautiful leaflet maps. Try this:
 
 ``` r
-load(system.file("data/df.rda", package = "capstone"))
+library(capstone)
+load(system.file("extdata", "df.rda", package = "capstone"))
 
 df_clean = eq_clean_data(df)
 

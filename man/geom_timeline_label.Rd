@@ -40,10 +40,12 @@ line to each data point with a text annotation (e.g. the location of the
 earthquake) attached to each line.
 }
 \examples{
+\dontrun{
 df \%>\% filter(COUNTRY \%in\% c("RUSSIA", "ISRAEL"), date > "2000-01-01") \%>\%
  ggplot(aes(x = date, size = EQ_PRIMARY, y = COUNTRY, col = DEATHS)) +
  geom_timeline() +
  scale_size_continuous(name = 'Richter scale value') +
  scale_color_continuous(name = '# deaths')+
  geom_timeline_label(aes(label=LOCATION_NAME), n_max=1)
+ }
 }

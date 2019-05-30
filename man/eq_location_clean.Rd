@@ -16,6 +16,7 @@ This function returns a data frame with cleaned location names
 This function returns a clean data frame.
 }
 \examples{
+\dontrun{
 df = eq_location_clean(df)
-
+}
 }

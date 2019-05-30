@@ -23,12 +23,13 @@
 #' @return This function returns a timeline plot
 #'
 #' @examples
+#' \dontrun{
 #' df %>% filter(COUNTRY %in% c("RUSSIA", "ISRAEL")) %>%
 #'   ggplot(aes(x = date, size = EQ_PRIMARY, y = COUNTRY, col= DEATHS)) +
 #'       geom_timeline() +
 #'       scale_size_continuous(name = 'Richter scale value') +
 #'       scale_color_continuous(name = '# deaths')
-#'
+#'}
 #' @export
 geom_timeline <- function(mapping = NULL, data = NULL, stat = "identity",
                           position = "identity", show.legend = NA, na.rm = FALSE,
@@ -101,12 +102,14 @@ GeomTimeline <- ggplot2::ggproto("GeomTimeline", ggplot2::Geom,
 #' @return This function returns a timeline plot with annotations
 #'
 #' @examples
+#' \dontrun{
 #' df %>% filter(COUNTRY %in% c("RUSSIA", "ISRAEL"), date > "2000-01-01") %>%
 #'  ggplot(aes(x = date, size = EQ_PRIMARY, y = COUNTRY, col = DEATHS)) +
 #'  geom_timeline() +
 #'  scale_size_continuous(name = 'Richter scale value') +
 #'  scale_color_continuous(name = '# deaths')+
 #'  geom_timeline_label(aes(label=LOCATION_NAME), n_max=1)
+#'  }
 #' @export
 geom_timeline_label <- function(mapping = NULL, data = NULL, stat = "identity",
                                 position = "identity", show.legend = NA, na.rm = FALSE,

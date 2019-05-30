@@ -12,9 +12,11 @@
 #' @return This function returns a leaflet map with earthquake epicentres and annotations
 #' within pop-up window
 #' @examples
+#' \dontrun{
 #' df %>%
 #'   dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
 #'   eq_map(annot_col = "DATE")
+#'   }
 #' @export
 eq_map <- function(df_clean, annot_col) {
   leaflet() %>%
@@ -40,10 +42,12 @@ eq_map <- function(df_clean, annot_col) {
 #'and eq_location_clean(). Initial raw data should be downloaded from NOAA website#'
 #' @return This function creates HTML label with annotations
 #' @examples
+#' \dontrun{
 #' df %>%
 #'   dplyr::filter(COUNTRY == "RUSSIA" & lubridate::year(DATE) >= 2000) %>%
 #'   dplyr::mutate(popup_text = eq_create_label(.)) %>%
 #'   eq_map(annot_col = "popup_text")
+#'   }
 #' @export
 eq_create_label<- function(df_clean) {
   str_c(

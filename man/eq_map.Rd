@@ -27,7 +27,9 @@ The user should be able to choose which column is used for the annotation in the
 pop-up with a function argument named annot_col.
 }
 \examples{
+\dontrun{
 df \%>\%
   dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) \%>\%
   eq_map(annot_col = "DATE")
+  }
 }

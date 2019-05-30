@@ -15,8 +15,9 @@
 #' and latitude
 #'
 #' @examples
+#' \dontrun{
 #' df = eq_clean_data(df)
-#'
+#'}
 #' @export
 eq_clean_data = function(df) {
   df = mutate(df,
@@ -49,8 +50,9 @@ eq_clean_data = function(df) {
 #' @return This function returns a data frame with cleaned location names
 #'
 #' @examples
+#' \dontrun{
 #' df = eq_location_clean(df)
-#'
+#'}
 #' @export
 eq_location_clean = function(df){
   df = mutate(df, LOCATION_NAME = LOCATION_NAME %>% str_replace(".*: *", "") %>% str_to_title())
